@@ -25,4 +25,10 @@
 					headers: { "authorization" => @auth_token })
 		@msgstatus = JSON.parse(response.body)
 	end 
+
+	def get_remaining_checkpoint(checkpt_id)
+		response = self.class.get("https://www.bloc.io/api/v1/enrollment_chains/#{checkpt_id}/checkpoints_remaining_in_section", values: { "id" => checkpt_id}, headers: { "authorization" => @auth_token })
+		@remaining = JSON.parse(response.body)
+	end 
+
 end 
