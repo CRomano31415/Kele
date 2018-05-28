@@ -7,7 +7,7 @@ class Kele
 	include JSON
 	include Roadmap
 
-  	base_uri 'https://www.bloc.io/api/v1'
+  	base_uri BASE_URL
 
 	def initialize(email, pass)
 		response = self.class.post('/sessions', body: {"email": email, "password": pass})
